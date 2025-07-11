@@ -1,0 +1,20 @@
+{
+  "name": "wdio_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@wdio/cli": "^9.16.2",
+    "@wdio/cucumber-framework": "^9.16.2",
+    "@wdio/local-runner": "^9.16.2",
+    "@wdio/mocha-framework": "^9.16.2",
+    "@wdio/spec-reporter": "^9.16.2",
+    "wdio-json-html-reporter": "^1.5.13"
+  }
+}
