@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Cucumber",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dummy.js", // можно указать любой файл, если нужен
+      "preLaunchTask": "wdio run wdio.conf.js --spec ./ui/features/*.feature --framework cucumber",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

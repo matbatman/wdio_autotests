@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "wdio run wdio.conf.js --spec ./ui/features/*.feature --framework cucumber",
+      "type": "shell",
+      "command": "npx",
+      "args": ["wdio run wdio.conf.js --spec ./ui/features/*.feature --framework cucumber"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -61,7 +61,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'warn',
+    logLevel: 'info',
     //
     // Set specific log levels per logger
     // loggers:
@@ -109,8 +109,8 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
-    
+    framework: process.env.FRAMEWORK || 'mocha',
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -132,6 +132,10 @@ exports.config = {
         ui: 'bdd',
         timeout: 60000
     },
+    cucumberOpts: {
+        require: ['./ui/step-definitions/*.js'],
+        timeout: 60000,
+    }
 
     //
     // =====
