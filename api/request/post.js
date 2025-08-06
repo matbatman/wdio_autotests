@@ -28,15 +28,15 @@ export const createPet = async () => {
             'Content-Type': 'application/json'
         },
         data: data
-};
+    };
 
-return await axios.request(config)
-    .then((response) => {
-        return response;
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+    return await axios.request(config)
+        .then((response) => {
+            return response;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 // метод обновления записи о животном по id
@@ -54,6 +54,45 @@ export const updatePetPetId = async (petId) => {
         },
         data: data
     };
+
+    return await axios.request(config)
+        .then((response) => {
+            return response;
+        })
+        .catch((error) => {
+            console.log(error);
+            return error.response
+        });
+}
+
+//метод для создания пользователя
+export const createUser = async (id, noDataFlag = false) => {
+    
+        let data = JSON.stringify({
+            "id": id,
+            "username": "marusya",
+            "firstName": "Marya",
+            "lastName": "Ivanova",
+            "email": "marusya@mail.ru",
+            "password": "Qaz123123",
+            "phone": "79878905437",
+            "userStatus": 0
+        });
+    
+
+    const config = {
+        method: 'post',
+        url: 'https://petstore.swagger.io/v2/user',
+        headers: {
+            'accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+
+        data: data
+
+    }
+
+    if (noDataFlag) delete config.data
 
     return await axios.request(config)
         .then((response) => {
