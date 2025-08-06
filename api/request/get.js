@@ -36,6 +36,26 @@ export const findByStatus = async (status) => {
         });
 }
 
+
+export const getOrderId = async (orderId) => {
+    const config = {
+        method: 'get',
+        url: `https://petstore.swagger.io/v2/store/order/${orderId}`,
+        headers: {
+            'accept': 'application/json'
+        }
+    };
+
+ return await axios.request(config)
+        .then((response) => {  
+          return response;
+        })
+        .catch((error) => {
+            return error;
+        });
+}
+
+
 export const spacexdataLaunchesAll = async () => {
     const config = {
         method: 'get',
