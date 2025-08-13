@@ -1,6 +1,13 @@
 Feature: Steam
 
-  Scenario: Steam check
+  Scenario Outline: Steam check
     Given Я на странице стим
-    When Я нажимаю на элемент меню 'СООБЩЕСТВО'
-    Then Я нахожусь на странице стим 'steamcommunity'
+    When Я нажимаю на элемент меню '<Header>'
+    Then Я нахожусь на странице стим '<URL>'
+
+    Examples:
+      | Header     | URL            |
+      | МАГАЗИН    | steampowered   |
+      | СООБЩЕСТВО | steamcommunity |
+      | Информация | about          | 
+      | ПОДДЕРЖКА  | help           | 
