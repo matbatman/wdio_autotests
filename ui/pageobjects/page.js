@@ -7,7 +7,7 @@ const { browser } = require('@wdio/globals')
 module.exports = class Page {
 
     SELECTORS= {
-        TAB_NAME: (elementMenu) => `//a[contains(text(), '${elementMenu}')]`,
+        TAB_NAME: (elementMenu) => `//div[@class='supernav_container']//a[contains(text(), '${elementMenu}')]`,
     }
     /**
     * Opens a sub page of the page
