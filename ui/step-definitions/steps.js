@@ -8,8 +8,17 @@ const pages = {
     login: LoginPage
 }
 
-Given(/^I am on the (\w+) page$/, async (page) => {
-    await pages[page].open()
+Given('Я на странице стим', async () => {
+    await browser.url('https://store.steampowered.com/');
+});
+
+When(/^Я нажимаю на элемент меню '([^']+)'$/, async (elementMenu) => {
+    const menuButton = await $(LoginPage.SELECTORS.TAB_NAME(elementMenu))
+    await menuButton.click()
+});
+
+When(/^Я нахожусь на странице стим '([^']+)'$/, async (page) => {
+    await expect(browser).toHaveUrl(expect.stringContaining(page))
 });
 
 When(/^I login with (\w+) and (.+)$/, async (username, password) => {
