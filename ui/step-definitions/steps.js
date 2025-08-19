@@ -15,6 +15,9 @@ Given('Я на странице стим', async () => {
 When(/^Я нажимаю на элемент меню '([^']+)'$/, async (elementMenu) => {
     const menuButton = await $(LoginPage.SELECTORS.TAB_NAME(elementMenu))
     await menuButton.click()
+    console.log('++++++++++++++++++++++++++++++++++++++++++++')
+    console.log(LoginPage.SELECTORS.TAB_NAME(elementMenu))
+    console.log('++++++++++++++++++++++++++++++++++++++++++++')
 });
 
 When(/^Я нахожусь на странице стим '([^']+)'$/, async (page) => {
