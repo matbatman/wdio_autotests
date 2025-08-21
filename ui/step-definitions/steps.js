@@ -50,3 +50,11 @@ When(/^Отображается игра '([^']+)'$/, async (gameName) => {
     await expect(elem).toBeDisplayed()
 
 });
+
+When(/^Я нажимаю на элемент популярных разделов '([^']+)'$/, async (popularName) => {
+    const popularButton = await $(LoginPage.SELECTORS.POPULAR_NAME(popularName));
+    await popularButton.click()
+});
+
+
+

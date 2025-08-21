@@ -133,7 +133,7 @@ exports.config = {
         timeout: 60000
     },
     cucumberOpts: {
-        require: ['./ui/step-definitions/*.js'],
+        require: ['./ui/step-definitions/steps.js'],
         timeout: 60000,
     }
 
