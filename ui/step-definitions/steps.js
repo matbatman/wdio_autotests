@@ -15,9 +15,6 @@ Given('Я на странице стим', async () => {
 When(/^Я нажимаю на элемент меню '([^']+)'$/, async (elementMenu) => {
     const menuButton = await $(LoginPage.SELECTORS.TAB_NAME(elementMenu))
     await menuButton.click()
-    console.log('++++++++++++++++++++++++++++++++++++++++++++')
-    console.log(LoginPage.SELECTORS.TAB_NAME(elementMenu))
-    console.log('++++++++++++++++++++++++++++++++++++++++++++')
 });
 
 When(/^Я нахожусь на странице стим '([^']+)'$/, async (page) => {
@@ -33,3 +30,23 @@ Then(/^I should see a flash message saying (.*)$/, async (message) => {
     await expect(SecurePage.flashAlert).toHaveText(expect.stringContaining(message));
 });
 
+When('Я нажимаю на элемент меню поиска', async () => {
+    const searchButton = await $(LoginPage.SELECTORS.SEARCH_BUTTON)
+    await searchButton.click()
+});
+
+Then('Отображается контейнер с результатами поиска', async () => {
+    let elem = await $(LoginPage.SELECTORS.SEARCH_RESULTS_ROWS);
+    await expect(elem).toBeDisplayed()
+});
+
+When(/^Я ввожу в поле ввода поиска '([^']+)'$/, async (gameName) => {
+    const input = await $(LoginPage.SELECTORS.STORE_SEARCH_INPUT);
+    await input.setValue(gameName)
+});
+
+When(/^Отображается игра '([^']+)'$/, async (gameName) => {
+    let elem = await $(LoginPage.SELECTORS.GAME_NAME(gameName));
+    await expect(elem).toBeDisplayed()
+
+});
