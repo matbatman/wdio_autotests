@@ -11,7 +11,9 @@ module.exports = class Page {
         SEARCH_BUTTON: '#store_search_link img',
         SEARCH_RESULTS_ROWS: '#search_resultsRows',
         STORE_SEARCH_INPUT: '#store_nav_search_term',
-        GAME_NAME: (someName) => `//span[@class='title'][text()='${someName}']`
+        GAME_NAME: (someName) => `//span[@class='title'][text()='${someName}']`,
+        POPULAR_NAME: (popularName) => `//a[@class='big_button'][contains(text(),'${popularName}')]`,
+        
     }
     /**
     * Opens a sub page of the page
